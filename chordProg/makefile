@@ -11,7 +11,7 @@ all : $(RRA)
 		./$<
 
 %.x	: %.c
-		gcc -Wall -g -o $@ -I$(INCLUDE) $< -L$(LIB) -lsong -lm 
+		gcc -Wall -o $@ -I$(INCLUDE) $< -L$(LIB) -lsong -lm 
 
 mix.rra		: $(RRA)
 		rrafastmixer $(RRA) > mix.rra
