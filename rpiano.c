@@ -32,9 +32,6 @@ main()
     openOutput("rpiano.rra",0,0);
     //verse(instrument, octave);
     verse(instrument, octave);
-    verse(instrument, octave);
-    verse(instrument, octave);
-    verse(instrument, octave);
     setTempo(250);
     b(1,Q,instrument,octave,"---",SX);
     chorus(instrument, octave);
@@ -128,6 +125,9 @@ chorus(int instrument, int octave){
 int 
 verse(int instrument, int octave)
 {
+    int i;
+    for(i=0; i<4; ++i)
+    {
         c(1,H,instrument,octave); 
         b(1,H,instrument,octave,"---",SX);
         c(1,H,instrument,octave); 
@@ -167,6 +167,7 @@ verse(int instrument, int octave)
         b(1,H,instrument,octave, "xxx","---",SX); 
         b(1,H,instrument,octave, "xxx","xxx",SX); 
         c(1,Q,instrument,octave); 
+    }
     return 0;
 }
 

@@ -1,6 +1,6 @@
 #Place the names of all your tracks here (as RRA filenames)
 
-RRA = rpiano.rra
+RRA = rpiano.rra drums.rra
 SRRA = s-rpiano.rra
 INCLUDE=/usr/local/include/songlib/
 LIB=/usr/local/lib/
