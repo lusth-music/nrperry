@@ -27,14 +27,16 @@ main()
 
     openOutput("drums.rra",0,0);
     int i;
-    for(i=0;i<60;++i){
+    for(i=0;i<64;++i){
         spot=getLocation();     
         //drumkitHHClosed(1,1,"--X---X---X---X-", SX); setLocation(spot);
         //drumkitSnare (1,1,"--X---X---X---X-", SX); setLocation(spot);
         //drumkitKick  (1,2,"x---x---x---x-x-", SX);
         //rest(T/2-T/5);
-        drumkitHHClosed(1,1,"--------x-------",SX);setLocation(spot);
-        drumkitKick(1,1,"x---------------",SX);
+       drumkitSnare(1,1,"----------------x---------------",SX);setLocation(spot);
+       drumkitHHClosed(1,1,"----------------x---------------",SX);setLocation(spot);
+        drumkitKick(1,1,"x-------------------------------",SX);
+        
     }
     closeOutput();
 
