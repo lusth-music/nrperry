@@ -12,7 +12,6 @@ char *PROGRAM_NAME ="rpiano";
 char *PROGRAM_VERSION = "v1.0";
 int chorus(int, int);
 int verse(int, int);
-int bridge(int, int);
 int
 main()
     {
@@ -27,13 +26,12 @@ main()
     setTime(4,4);
     setStride(0.05);
     setSustain(0.99995);
-    setAmplitude(0.3);
+    setAmplitude(0.1);
 
     openOutput("rpiano.rra",0,0);
-    //verse(instrument, octave);
-    verse(instrument, octave);
+//    verse(instrument, octave);
     setTempo(250);
-    b(1,Q,instrument,octave,"---",SX);
+//    b(1,Q,instrument,octave,"---",SX);
     chorus(instrument, octave);
     closeOutput();
     return 0;
@@ -171,9 +169,3 @@ verse(int instrument, int octave)
     return 0;
 }
 
-int
-bridge(int instrument, int octave)
-{
-    
-    return 0;
-}
