@@ -29,8 +29,8 @@ main()
     int i, spot;
 //    verse();
 //    drumkitSnare(1,1,"xxxx",SX);
-    chorus();
-    
+//    chorus();
+      bridge();  
     closeOutput();
 
     return 0;
@@ -73,6 +73,7 @@ return 0;
 int
 bridge(){
     int spot;
+    setTempo(275);
     drumkitSnare (1,1,"xxxxX---", SX);
     drumkitHHClosed (1,1,"X---X---", SX);
     setTempo(250);

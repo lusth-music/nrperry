@@ -30,9 +30,9 @@ main()
 
     openOutput("rpiano.rra",0,0);
 //    verse(instrument, octave);
-    setTempo(250);
+//    setTempo(250);
 //    b(1,Q,instrument,octave,"---",SX);
-    chorus(instrument, octave);
+//    chorus(instrument, octave);
     closeOutput();
     return 0;
     }
