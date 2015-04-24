@@ -27,10 +27,12 @@ main()
 
     openOutput("drums.rra",0,0);
     int i, spot;
-//    verse();
-//    drumkitSnare(1,1,"xxxx",SX);
-//    chorus();
-      bridge();  
+    verse();
+    //drumkitSnare(1,1,"x-x-xxxx",SX);
+    chorus();
+    bridge();  
+    verse();
+    chorus();
     closeOutput();
 
     return 0;
@@ -39,21 +41,22 @@ main()
 int
 verse()
 {
+    setTempo(500);
     int i, spot, j;
     for(j=0;j<16;j++){
     for(i=0;i<2;++i){
         spot=getLocation();     
-         drumkitKick(1,.7,"x---------------",SX);setLocation(spot);
+         drumkitKick(1,.8,"x---------------",SX);setLocation(spot);
      drumkitHHClosed(1,.7,"--------x-------",SX); setLocation(spot);
         drumkitSnare(1,.7,"--------x-------",SX);
     }
         spot=getLocation();     
-        drumkitKick(1,.7,"x-----------x---",SX);setLocation(spot);
+        drumkitKick(1,.8,"x-----------x---",SX);setLocation(spot);
     drumkitHHClosed(1,.7,"--------x-------",SX);setLocation(spot);
        drumkitSnare(1,.7,"--------x-------",SX);
         
         spot=getLocation();     
-        drumkitKick(1,.7,"----x-----------",SX);setLocation(spot);
+        drumkitKick(1,.8,"----x-----------",SX);setLocation(spot);
     drumkitHHClosed(1,.7,"--------x-------",SX);setLocation(spot);
        drumkitSnare(1,.7,"--------x-------",SX);
     }
@@ -63,11 +66,17 @@ return 0;
 int
 chorus()
 {
-    setTempo(125);
-    int spot=getLocation();
-    drumkitKick(1,.7,"x--x-x-xxx-x-x--",SX); setLocation(spot);
-   drumkitHHClosed(1,.7,"--x---x---x---x-",SX);
-return 0;
+    setTempo(109.375);
+    int spot, i;
+    for(i=0; i<4; i++){
+        spot=getLocation();
+        drumkitKick(1,.8,"x--x-x-xxx-x-x--",SX); setLocation(spot);
+        drumkitHHClosed(1,.7,"--x---x---x---x-",SX);
+    }
+    spot=getLocation();
+    drumkitHHClosed(3,.5,"x-x-xxx-x-x-x-x-",SX);
+    drumkitHHClosed(1,.5,"x-x-xxx-x-x-x---",SX);
+    return 0;
 }
 
 int

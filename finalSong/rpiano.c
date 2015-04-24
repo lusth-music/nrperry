@@ -12,6 +12,8 @@ char *PROGRAM_NAME ="rpiano";
 char *PROGRAM_VERSION = "v1.0";
 int chorus(int, int);
 int verse(int, int);
+int bridge(int, int);
+
 int
 main()
     {
@@ -22,17 +24,18 @@ main()
 
     instrument = readScale(dir,base);
 
-    setTempo(500);
     setTime(4,4);
     setStride(0.05);
     setSustain(0.99995);
     setAmplitude(0.1);
 
     openOutput("rpiano.rra",0,0);
-//    verse(instrument, octave);
+    verse(instrument, octave);
 //    setTempo(250);
-//    b(1,Q,instrument,octave,"---",SX);
-//    chorus(instrument, octave);
+    chorus(instrument, octave);
+    bridge(instrument, octave);
+    verse(instrument,octave);
+    chorus(instrument, octave);
     closeOutput();
     return 0;
     }
@@ -40,6 +43,7 @@ main()
 int 
 chorus(int instrument, int octave){ 
     int i;
+    setTempo(218.75);
     for(i=0;i<2;++i){
         c(1,Q,instrument,octave);
         b(1,Q,instrument,octave,"xxx","xxx",SX);
@@ -116,13 +120,14 @@ chorus(int instrument, int octave){
         b(6,I,instrument,octave, "xx-",SX);
         b(4,I,instrument,octave, "---", SX);
         b(5,H,instrument,octave,"xx-",SX);
-        cpower2(1,W,instrument,octave);
+        cpower2(1,H,instrument,octave);
         return 0;
         }
 
 int 
 verse(int instrument, int octave)
 {
+    setTempo(500);
     int i;
     for(i=0; i<4; ++i)
     {
@@ -169,3 +174,14 @@ verse(int instrument, int octave)
     return 0;
 }
 
+int
+bridge(int instrument, int octave)
+{
+    int i;
+    for(i=0; i<37; i++){
+    rest(W);
+    }
+    rest(Q);
+    rest(S);
+    return 0;
+}
